@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OilTrackingAutomationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="movementsTable">
+    <Key>
+      <PropertyRef Name="movementsId" />
+    </Key>
+    <Property Name="movementsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="plaque" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="oilType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="liter" Type="Int32" />
+    <Property Name="price" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="oilTable">
+    <Key>
+      <PropertyRef Name="oilId" />
+    </Key>
+    <Property Name="oilId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="oilType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="purchasePrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="salePrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="stock" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="OilTrackingAutomationEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="movementsTable" EntityType="Self.movementsTable" />
+    <EntitySet Name="oilTable" EntityType="Self.oilTable" />
+  </EntityContainer>
+</Schema>

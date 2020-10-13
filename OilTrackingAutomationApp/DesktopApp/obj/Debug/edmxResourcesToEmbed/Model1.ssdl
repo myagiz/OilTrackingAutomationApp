@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OilTrackingAutomationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'OilTrackingAutomation.dbo.caseTable' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="caseTable">
+          <Property Name="quantity" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OilTrackingAutomation.dbo.movementsTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="movementsTable">
+    <Key>
+      <PropertyRef Name="movementsId" />
+    </Key>
+    <Property Name="movementsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="plaque" Type="varchar" MaxLength="20" />
+    <Property Name="oilType" Type="varchar" MaxLength="20" />
+    <Property Name="liter" Type="int" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OilTrackingAutomation.dbo.oilTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="oilTable">
+    <Key>
+      <PropertyRef Name="oilId" />
+    </Key>
+    <Property Name="oilId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="oilType" Type="varchar" MaxLength="30" />
+    <Property Name="purchasePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="salePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="stock" Type="int" />
+  </EntityType>
+  <EntityContainer Name="OilTrackingAutomationModelStoreContainer">
+    <EntitySet Name="movementsTable" EntityType="Self.movementsTable" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [movementsTable].[movementsId] AS [movementsId], 
+    [movementsTable].[plaque] AS [plaque], 
+    [movementsTable].[oilType] AS [oilType], 
+    [movementsTable].[liter] AS [liter], 
+    [movementsTable].[price] AS [price]
+    FROM [dbo].[movementsTable] AS [movementsTable]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="oilTable" EntityType="Self.oilTable" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [oilTable].[oilId] AS [oilId], 
+    [oilTable].[oilType] AS [oilType], 
+    [oilTable].[purchasePrice] AS [purchasePrice], 
+    [oilTable].[salePrice] AS [salePrice], 
+    [oilTable].[stock] AS [stock]
+    FROM [dbo].[oilTable] AS [oilTable]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

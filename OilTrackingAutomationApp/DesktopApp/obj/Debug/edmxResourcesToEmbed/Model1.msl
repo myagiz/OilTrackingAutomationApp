@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OilTrackingAutomationModelStoreContainer" CdmEntityContainer="OilTrackingAutomationEntities">
+    <EntitySetMapping Name="movementsTable">
+      <EntityTypeMapping TypeName="OilTrackingAutomationModel.movementsTable">
+        <MappingFragment StoreEntitySet="movementsTable">
+          <ScalarProperty Name="movementsId" ColumnName="movementsId" />
+          <ScalarProperty Name="plaque" ColumnName="plaque" />
+          <ScalarProperty Name="oilType" ColumnName="oilType" />
+          <ScalarProperty Name="liter" ColumnName="liter" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oilTable">
+      <EntityTypeMapping TypeName="OilTrackingAutomationModel.oilTable">
+        <MappingFragment StoreEntitySet="oilTable">
+          <ScalarProperty Name="oilId" ColumnName="oilId" />
+          <ScalarProperty Name="oilType" ColumnName="oilType" />
+          <ScalarProperty Name="purchasePrice" ColumnName="purchasePrice" />
+          <ScalarProperty Name="salePrice" ColumnName="salePrice" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

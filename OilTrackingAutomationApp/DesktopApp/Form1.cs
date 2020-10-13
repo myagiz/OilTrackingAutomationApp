@@ -13,12 +13,13 @@ namespace DesktopApp
 {
     public partial class Form1 : Form
     {
+        private OilTrackingAutomationEntities db = new OilTrackingAutomationEntities();
         public Form1()
         {
             InitializeComponent();
         }
         SqlConnection connection=new SqlConnection(@"Data Source=FUCKERYAGO;Initial Catalog=OilTrackingAutomation;Integrated Security=True");
-
+        
         private void OilTypelbl_Click(object sender, EventArgs e)
         {
 
@@ -31,6 +32,7 @@ namespace DesktopApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = db.movementsTable.ToList();
             ListAll();
         }
 
@@ -97,6 +99,7 @@ namespace DesktopApp
                 lblCase.Text = dr5[0].ToString();
             }
             connection.Close();
+
         }
 
         private void lblMaxEuroDiesel_Click(object sender, EventArgs e)
@@ -147,7 +150,7 @@ namespace DesktopApp
             {
                 connection.Open();
                 SqlCommand command=
-                    new SqlCommand("insert to movementsTable(plaque,oiltype,liter,price) values(@p1,@p2,@p3,@p4)",connection);
+                    new SqlCommand("insert into movementsTable (plaque,oilType,liter,price) values (@p1,@p2,@p3,@p4)",connection);
                 command.Parameters.AddWithValue("@p1", txtPlaque.Text);
                 command.Parameters.AddWithValue("@p2","unleaded95");
                 command.Parameters.AddWithValue("@p3", numericUpDown1.Value);
@@ -163,11 +166,25 @@ namespace DesktopApp
                 connection.Close();
                 
                 connection.Open();
-                SqlCommand command3=new SqlCommand("update oilTable set stock=stock-@p1 where oilType'unleaded95'",connection);
+                SqlCommand command3=new SqlCommand("update oilTable set stock=stock-@p1 where oilType='unleaded95'",connection);
                 command3.Parameters.AddWithValue("@p1", numericUpDown1.Value);
+                command3.ExecuteNonQuery();
                 connection.Close();
                 MessageBox.Show("Sale was made !");
+                ListAll();
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            dataGridView1.DataSource = db.movementsTable.ToList();
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
