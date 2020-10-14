@@ -62,14 +62,29 @@
             this.lblUnleaded95liter = new System.Windows.Forms.Label();
             this.autoGas = new System.Windows.Forms.ProgressBar();
             this.proEuroDiesel = new System.Windows.Forms.ProgressBar();
-            this.maxEuroDiesel = new System.Windows.Forms.ProgressBar();
+            this.maxeurodiesel = new System.Windows.Forms.ProgressBar();
             this.unleaded95 = new System.Windows.Forms.ProgressBar();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblCase = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtSearchPlaque = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnBuyOilAndLoadSystem = new System.Windows.Forms.Button();
+            this.btnUpdateOilTypesLiterPrice = new System.Windows.Forms.Button();
+            this.btnChangeCompanyInformatıons = new System.Windows.Forms.Button();
+            this.btnContactProgrammer = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblCompanyName = new System.Windows.Forms.Label();
+            this.lblCompanyAdress = new System.Windows.Forms.Label();
+            this.lblCompanyPhoneNumber = new System.Windows.Forms.Label();
+            this.lblCompanyMail = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
@@ -80,11 +95,11 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.lblAutoGas);
             this.groupBox1.Controls.Add(this.lblProEuroDiesel);
             this.groupBox1.Controls.Add(this.lblMaxEuroDiesel);
@@ -95,7 +110,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.OilTypelbl);
-            this.groupBox1.Location = new System.Drawing.Point(394, 235);
+            this.groupBox1.Location = new System.Drawing.Point(403, 235);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(467, 196);
             this.groupBox1.TabIndex = 0;
@@ -212,13 +227,18 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(900, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(338, 419);
+            this.groupBox2.Size = new System.Drawing.Size(338, 420);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
             // numericUpDown4
             // 
             this.numericUpDown4.Location = new System.Drawing.Point(33, 152);
+            this.numericUpDown4.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown4.TabIndex = 16;
@@ -227,6 +247,11 @@
             // numericUpDown3
             // 
             this.numericUpDown3.Location = new System.Drawing.Point(33, 127);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown3.TabIndex = 15;
@@ -235,6 +260,11 @@
             // numericUpDown2
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(33, 102);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown2.TabIndex = 14;
@@ -243,6 +273,11 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(33, 77);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 13;
@@ -250,13 +285,14 @@
             // 
             // btnFill
             // 
+            this.btnFill.BackColor = System.Drawing.Color.Transparent;
             this.btnFill.Font = new System.Drawing.Font("Cambria", 18F);
-            this.btnFill.Location = new System.Drawing.Point(33, 356);
+            this.btnFill.Location = new System.Drawing.Point(33, 310);
             this.btnFill.Name = "btnFill";
             this.btnFill.Size = new System.Drawing.Size(271, 47);
             this.btnFill.TabIndex = 12;
             this.btnFill.Text = "Fill In";
-            this.btnFill.UseVisualStyleBackColor = true;
+            this.btnFill.UseVisualStyleBackColor = false;
             this.btnFill.Click += new System.EventHandler(this.btnFill_Click);
             // 
             // label14
@@ -326,6 +362,10 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.lblAutogasLiter);
             this.groupBox3.Controls.Add(this.lblProEuroDieselLiter);
@@ -333,9 +373,9 @@
             this.groupBox3.Controls.Add(this.lblUnleaded95liter);
             this.groupBox3.Controls.Add(this.autoGas);
             this.groupBox3.Controls.Add(this.proEuroDiesel);
-            this.groupBox3.Controls.Add(this.maxEuroDiesel);
+            this.groupBox3.Controls.Add(this.maxeurodiesel);
             this.groupBox3.Controls.Add(this.unleaded95);
-            this.groupBox3.Location = new System.Drawing.Point(394, 12);
+            this.groupBox3.Location = new System.Drawing.Point(403, 13);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(467, 216);
             this.groupBox3.TabIndex = 2;
@@ -355,7 +395,7 @@
             // 
             this.lblAutogasLiter.AutoSize = true;
             this.lblAutogasLiter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAutogasLiter.Location = new System.Drawing.Point(304, 155);
+            this.lblAutogasLiter.Location = new System.Drawing.Point(408, 156);
             this.lblAutogasLiter.Name = "lblAutogasLiter";
             this.lblAutogasLiter.Size = new System.Drawing.Size(54, 18);
             this.lblAutogasLiter.TabIndex = 7;
@@ -365,7 +405,7 @@
             // 
             this.lblProEuroDieselLiter.AutoSize = true;
             this.lblProEuroDieselLiter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblProEuroDieselLiter.Location = new System.Drawing.Point(304, 129);
+            this.lblProEuroDieselLiter.Location = new System.Drawing.Point(408, 127);
             this.lblProEuroDieselLiter.Name = "lblProEuroDieselLiter";
             this.lblProEuroDieselLiter.Size = new System.Drawing.Size(54, 18);
             this.lblProEuroDieselLiter.TabIndex = 6;
@@ -375,7 +415,7 @@
             // 
             this.lblMaxEuroDieselLiter.AutoSize = true;
             this.lblMaxEuroDieselLiter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblMaxEuroDieselLiter.Location = new System.Drawing.Point(304, 102);
+            this.lblMaxEuroDieselLiter.Location = new System.Drawing.Point(408, 99);
             this.lblMaxEuroDieselLiter.Name = "lblMaxEuroDieselLiter";
             this.lblMaxEuroDieselLiter.Size = new System.Drawing.Size(46, 18);
             this.lblMaxEuroDieselLiter.TabIndex = 5;
@@ -385,7 +425,7 @@
             // 
             this.lblUnleaded95liter.AutoSize = true;
             this.lblUnleaded95liter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUnleaded95liter.Location = new System.Drawing.Point(304, 75);
+            this.lblUnleaded95liter.Location = new System.Drawing.Point(408, 72);
             this.lblUnleaded95liter.Name = "lblUnleaded95liter";
             this.lblUnleaded95liter.Size = new System.Drawing.Size(46, 18);
             this.lblUnleaded95liter.TabIndex = 4;
@@ -393,32 +433,32 @@
             // 
             // autoGas
             // 
-            this.autoGas.Location = new System.Drawing.Point(22, 149);
-            this.autoGas.Maximum = 10000;
+            this.autoGas.Location = new System.Drawing.Point(126, 156);
+            this.autoGas.Maximum = 20000;
             this.autoGas.Name = "autoGas";
             this.autoGas.Size = new System.Drawing.Size(276, 23);
             this.autoGas.TabIndex = 3;
             // 
             // proEuroDiesel
             // 
-            this.proEuroDiesel.Location = new System.Drawing.Point(22, 124);
-            this.proEuroDiesel.Maximum = 10000;
+            this.proEuroDiesel.Location = new System.Drawing.Point(126, 127);
+            this.proEuroDiesel.Maximum = 20000;
             this.proEuroDiesel.Name = "proEuroDiesel";
             this.proEuroDiesel.Size = new System.Drawing.Size(276, 23);
             this.proEuroDiesel.TabIndex = 2;
             // 
-            // maxEuroDiesel
+            // maxeurodiesel
             // 
-            this.maxEuroDiesel.Location = new System.Drawing.Point(22, 99);
-            this.maxEuroDiesel.Maximum = 10000;
-            this.maxEuroDiesel.Name = "maxEuroDiesel";
-            this.maxEuroDiesel.Size = new System.Drawing.Size(276, 23);
-            this.maxEuroDiesel.TabIndex = 1;
+            this.maxeurodiesel.Location = new System.Drawing.Point(126, 99);
+            this.maxeurodiesel.Maximum = 20000;
+            this.maxeurodiesel.Name = "maxeurodiesel";
+            this.maxeurodiesel.Size = new System.Drawing.Size(276, 23);
+            this.maxeurodiesel.TabIndex = 1;
             // 
             // unleaded95
             // 
-            this.unleaded95.Location = new System.Drawing.Point(22, 73);
-            this.unleaded95.Maximum = 10000;
+            this.unleaded95.Location = new System.Drawing.Point(126, 70);
+            this.unleaded95.Maximum = 20000;
             this.unleaded95.Name = "unleaded95";
             this.unleaded95.Size = new System.Drawing.Size(276, 23);
             this.unleaded95.TabIndex = 0;
@@ -438,9 +478,9 @@
             // 
             this.groupBox4.Controls.Add(this.lblCase);
             this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Location = new System.Drawing.Point(46, 240);
+            this.groupBox4.Location = new System.Drawing.Point(900, 450);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(319, 191);
+            this.groupBox4.Size = new System.Drawing.Size(338, 185);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             // 
@@ -448,11 +488,12 @@
             // 
             this.lblCase.AutoSize = true;
             this.lblCase.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCase.Location = new System.Drawing.Point(15, 118);
+            this.lblCase.Location = new System.Drawing.Point(15, 119);
             this.lblCase.Name = "lblCase";
             this.lblCase.Size = new System.Drawing.Size(124, 42);
             this.lblCase.TabIndex = 10;
             this.lblCase.Text = "label8";
+            this.lblCase.Click += new System.EventHandler(this.lblCase_Click);
             // 
             // pictureBox1
             // 
@@ -473,21 +514,176 @@
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
-            // button1
+            // txtSearchPlaque
             // 
-            this.button1.Location = new System.Drawing.Point(279, 162);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Update Oil Type\'s Liter Price";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtSearchPlaque.Location = new System.Drawing.Point(439, 647);
+            this.txtSearchPlaque.Name = "txtSearchPlaque";
+            this.txtSearchPlaque.Size = new System.Drawing.Size(151, 20);
+            this.txtSearchPlaque.TabIndex = 6;
+            this.txtSearchPlaque.TextChanged += new System.EventHandler(this.txtSearchPlaque_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Location = new System.Drawing.Point(282, 648);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(151, 16);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Search Plaque in Listing";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(19, 80);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(103, 13);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "V/Max Unleaded 95";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(19, 109);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 13);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "V/Max EuroDiesel";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(19, 137);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(89, 13);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "V/Pro EuroDiesel";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(19, 166);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(88, 13);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "Po/Gas AutoGas";
+            // 
+            // btnBuyOilAndLoadSystem
+            // 
+            this.btnBuyOilAndLoadSystem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBuyOilAndLoadSystem.Location = new System.Drawing.Point(608, 437);
+            this.btnBuyOilAndLoadSystem.Name = "btnBuyOilAndLoadSystem";
+            this.btnBuyOilAndLoadSystem.Size = new System.Drawing.Size(262, 31);
+            this.btnBuyOilAndLoadSystem.TabIndex = 0;
+            this.btnBuyOilAndLoadSystem.Text = "Buy Oil and Load System";
+            this.btnBuyOilAndLoadSystem.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateOilTypesLiterPrice
+            // 
+            this.btnUpdateOilTypesLiterPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnUpdateOilTypesLiterPrice.Location = new System.Drawing.Point(608, 493);
+            this.btnUpdateOilTypesLiterPrice.Name = "btnUpdateOilTypesLiterPrice";
+            this.btnUpdateOilTypesLiterPrice.Size = new System.Drawing.Size(262, 31);
+            this.btnUpdateOilTypesLiterPrice.TabIndex = 8;
+            this.btnUpdateOilTypesLiterPrice.Text = "Update Oil Types Liter Price";
+            this.btnUpdateOilTypesLiterPrice.UseVisualStyleBackColor = true;
+            // 
+            // btnChangeCompanyInformatıons
+            // 
+            this.btnChangeCompanyInformatıons.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnChangeCompanyInformatıons.Location = new System.Drawing.Point(608, 545);
+            this.btnChangeCompanyInformatıons.Name = "btnChangeCompanyInformatıons";
+            this.btnChangeCompanyInformatıons.Size = new System.Drawing.Size(262, 31);
+            this.btnChangeCompanyInformatıons.TabIndex = 9;
+            this.btnChangeCompanyInformatıons.Text = "Change Company Informatıons";
+            this.btnChangeCompanyInformatıons.UseVisualStyleBackColor = true;
+            // 
+            // btnContactProgrammer
+            // 
+            this.btnContactProgrammer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnContactProgrammer.Location = new System.Drawing.Point(608, 604);
+            this.btnContactProgrammer.Name = "btnContactProgrammer";
+            this.btnContactProgrammer.Size = new System.Drawing.Size(262, 31);
+            this.btnContactProgrammer.TabIndex = 10;
+            this.btnContactProgrammer.Text = "Contact with Programmer";
+            this.btnContactProgrammer.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.lblCompanyMail);
+            this.groupBox5.Controls.Add(this.lblCompanyPhoneNumber);
+            this.groupBox5.Controls.Add(this.lblCompanyAdress);
+            this.groupBox5.Controls.Add(this.lblCompanyName);
+            this.groupBox5.Controls.Add(this.label16);
+            this.groupBox5.Location = new System.Drawing.Point(46, 235);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(319, 197);
+            this.groupBox5.TabIndex = 11;
+            this.groupBox5.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Cambria", 18F);
+            this.label16.Location = new System.Drawing.Point(28, 33);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(248, 28);
+            this.label16.TabIndex = 9;
+            this.label16.Text = "Company Informations";
+            // 
+            // lblCompanyName
+            // 
+            this.lblCompanyName.AutoSize = true;
+            this.lblCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblCompanyName.Location = new System.Drawing.Point(33, 76);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(124, 16);
+            this.lblCompanyName.TabIndex = 10;
+            this.lblCompanyName.Text = "Yagizler Petrol Ofisi";
+            // 
+            // lblCompanyAdress
+            // 
+            this.lblCompanyAdress.AutoSize = true;
+            this.lblCompanyAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblCompanyAdress.Location = new System.Drawing.Point(33, 106);
+            this.lblCompanyAdress.Name = "lblCompanyAdress";
+            this.lblCompanyAdress.Size = new System.Drawing.Size(274, 16);
+            this.lblCompanyAdress.TabIndex = 11;
+            this.lblCompanyAdress.Text = "Yesilova Mahallesi,202/33. Sokak Buca/Izmır";
+            // 
+            // lblCompanyPhoneNumber
+            // 
+            this.lblCompanyPhoneNumber.AutoSize = true;
+            this.lblCompanyPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblCompanyPhoneNumber.Location = new System.Drawing.Point(33, 137);
+            this.lblCompanyPhoneNumber.Name = "lblCompanyPhoneNumber";
+            this.lblCompanyPhoneNumber.Size = new System.Drawing.Size(118, 16);
+            this.lblCompanyPhoneNumber.TabIndex = 12;
+            this.lblCompanyPhoneNumber.Text = "+950 050 050 55 55";
+            // 
+            // lblCompanyMail
+            // 
+            this.lblCompanyMail.AutoSize = true;
+            this.lblCompanyMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblCompanyMail.Location = new System.Drawing.Point(33, 166);
+            this.lblCompanyMail.Name = "lblCompanyMail";
+            this.lblCompanyMail.Size = new System.Drawing.Size(141, 16);
+            this.lblCompanyMail.TabIndex = 13;
+            this.lblCompanyMail.Text = "myagiz24@gmail.com";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1280, 647);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(1280, 679);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.btnContactProgrammer);
+            this.Controls.Add(this.btnChangeCompanyInformatıons);
+            this.Controls.Add(this.btnUpdateOilTypesLiterPrice);
+            this.Controls.Add(this.btnBuyOilAndLoadSystem);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtSearchPlaque);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox4);
@@ -511,7 +707,10 @@
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -533,7 +732,7 @@
         private System.Windows.Forms.TextBox txtUnleaded95Amount;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ProgressBar proEuroDiesel;
-        private System.Windows.Forms.ProgressBar maxEuroDiesel;
+        private System.Windows.Forms.ProgressBar maxeurodiesel;
         private System.Windows.Forms.ProgressBar unleaded95;
         private System.Windows.Forms.ProgressBar autoGas;
         private System.Windows.Forms.Button btnFill;
@@ -557,7 +756,22 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label lblCase;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtSearchPlaque;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnBuyOilAndLoadSystem;
+        private System.Windows.Forms.Button btnUpdateOilTypesLiterPrice;
+        private System.Windows.Forms.Button btnChangeCompanyInformatıons;
+        private System.Windows.Forms.Button btnContactProgrammer;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblCompanyMail;
+        private System.Windows.Forms.Label lblCompanyPhoneNumber;
+        private System.Windows.Forms.Label lblCompanyAdress;
+        private System.Windows.Forms.Label lblCompanyName;
     }
 }
 

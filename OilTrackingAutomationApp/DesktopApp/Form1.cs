@@ -32,7 +32,7 @@ namespace DesktopApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = db.movementsTable.ToList();
+            dataGridView1.DataSource = db.movementsTable.OrderByDescending(x =>x.movementsId).ToList();
             ListAll();
         }
 
@@ -58,7 +58,7 @@ namespace DesktopApp
             while (dr2.Read())
             {
                 lblMaxEuroDiesel.Text = dr2[3].ToString();
-                maxEuroDiesel.Value = int.Parse(dr2[4].ToString());
+                maxeurodiesel.Value = int.Parse(dr2[4].ToString());
                 lblMaxEuroDieselLiter.Text = dr2[4].ToString();
             }
 
@@ -166,12 +166,94 @@ namespace DesktopApp
                 connection.Close();
                 
                 connection.Open();
-                SqlCommand command3=new SqlCommand("update oilTable set stock=stock-@p1 where oilType='unleaded95'",connection);
+                SqlCommand command3=new SqlCommand("update oilTable set stock=stock-@p1 where oilType='V/Max Unleaded 95'", connection);
                 command3.Parameters.AddWithValue("@p1", numericUpDown1.Value);
                 command3.ExecuteNonQuery();
                 connection.Close();
-                MessageBox.Show("Sale was made !");
+                MessageBox.Show("V/Max Unleaded 95 sale was made !");
                 ListAll();
+            }
+
+            if (numericUpDown2.Value!=0)
+            {
+                connection.Open();
+                SqlCommand command =
+                    new SqlCommand("insert into movementsTable (plaque,oilType,liter,price) values (@p1,@p2,@p3,@p4)", connection);
+                command.Parameters.AddWithValue("@p1", txtPlaque.Text);
+                command.Parameters.AddWithValue("@p2", "maxeurodiesel");
+                command.Parameters.AddWithValue("@p3", numericUpDown2.Value);
+                command.Parameters.AddWithValue("@p4", decimal.Parse(txtMaxEuroDieselAmount.Text));
+                command.ExecuteNonQuery();
+                connection.Close();
+
+                connection.Open();
+                SqlCommand command2 = new SqlCommand("update caseTable set quantity=quantity+@p1", connection);
+                command2.Parameters.AddWithValue("@p1", decimal.Parse(txtMaxEuroDieselAmount.Text));
+                command2.ExecuteNonQuery();
+                connection.Close();
+
+                connection.Open();
+                SqlCommand command3 = new SqlCommand("update oilTable set stock=stock-@p1 where oilType='V/MaxEuroDiesel'", connection);
+                command3.Parameters.AddWithValue("@p1", numericUpDown2.Value);
+                command3.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("V/MaxEuroDiesel sale was made !");
+                ListAll();
+            }
+
+            if (numericUpDown3.Value!=0)
+            {
+                connection.Open();
+                SqlCommand command =
+                    new SqlCommand("insert into movementsTable (plaque,oilType,liter,price) values (@p1,@p2,@p3,@p4)", connection);
+                command.Parameters.AddWithValue("@p1", txtPlaque.Text);
+                command.Parameters.AddWithValue("@p2", "proeurodiesel");
+                command.Parameters.AddWithValue("@p3", numericUpDown3.Value);
+                command.Parameters.AddWithValue("@p4", decimal.Parse(txtProEuroDieselAmount.Text));
+                command.ExecuteNonQuery();
+                connection.Close();
+
+                connection.Open();
+                SqlCommand command2 = new SqlCommand("update caseTable set quantity=quantity+@p1", connection);
+                command2.Parameters.AddWithValue("@p1", decimal.Parse(txtProEuroDieselAmount.Text));
+                command2.ExecuteNonQuery();
+                connection.Close();
+
+                connection.Open();
+                SqlCommand command3 = new SqlCommand("update oilTable set stock=stock-@p1 where oilType='V/ProEuroDiesel'", connection);
+                command3.Parameters.AddWithValue("@p1", numericUpDown3.Value);
+                command3.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("V/ProEuroDiesel sale was made !");
+                ListAll();
+            }
+
+            if (numericUpDown4.Value!=0)
+            {
+                connection.Open();
+                SqlCommand command =
+                    new SqlCommand("insert into movementsTable (plaque,oilType,liter,price) values (@p1,@p2,@p3,@p4)", connection);
+                command.Parameters.AddWithValue("@p1", txtPlaque.Text);
+                command.Parameters.AddWithValue("@p2", "autogas");
+                command.Parameters.AddWithValue("@p3", numericUpDown4.Value);
+                command.Parameters.AddWithValue("@p4", decimal.Parse(txtAutoGasAmount.Text));
+                command.ExecuteNonQuery();
+                connection.Close();
+
+                connection.Open();
+                SqlCommand command2 = new SqlCommand("update caseTable set quantity=quantity+@p1", connection);
+                command2.Parameters.AddWithValue("@p1", decimal.Parse(txtAutoGasAmount.Text));
+                command2.ExecuteNonQuery();
+                connection.Close();
+
+                connection.Open();
+                SqlCommand command3 = new SqlCommand("update oilTable set stock=stock-@p1 where oilType='PO/Autogas'", connection);
+                command3.Parameters.AddWithValue("@p1", numericUpDown4.Value);
+                command3.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("PO/Autogas sale was made !");
+                ListAll();
+
             }
         }
 
@@ -183,6 +265,30 @@ namespace DesktopApp
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ListingByPlaque(string key)
+        {
+            dataGridView1.DataSource =
+                db.movementsTable.Where(x => x.plaque.ToLower().Contains(key.ToLower())).ToList();
+        }
+
+        private void txtSearchPlaque_TextChanged(object sender, EventArgs e)
+        {
+            string key = txtSearchPlaque.Text;
+            if (string.IsNullOrEmpty(key))
+            {
+                db.movementsTable.ToList();
+            }
+            else
+            {
+                ListingByPlaque(txtSearchPlaque.Text);
+            }
+        }
+
+        private void lblCase_Click(object sender, EventArgs e)
         {
 
         }
